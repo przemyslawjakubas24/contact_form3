@@ -10,87 +10,36 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Skontaktuj się z nami</h1>
-            <p>Masz pytania? Wypełnij formularz, a odpowiemy najszybciej jak to możliwe.</p>
-        </header>
+    <main>
+        <form id="contactForm" novalidate aria-label="Formularz kontaktowy">
+            <div class="form-row">
+                <label for="name">Imię i nazwisko <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" required aria-required="true" aria-describedby="nameError" />
+                <span id="nameError" class="error-message" aria-live="polite"></span>
+            </div>
+            <div class="form-row">
+                <label for="email">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" required aria-required="true"
+                    aria-describedby="emailError" />
+                <span id="emailError" class="error-message" aria-live="polite"></span>
+            </div>
+            <div class="form-row">
+                <label for="message">Wiadomość <span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" required aria-required="true"
+                    aria-describedby="messageError"></textarea>
+                <span id="messageError" class="error-message" aria-live="polite"></span>
+            </div>
+            <div class="form-row">
+                <button type="submit" id="submitBtn">Wyślij</button>
+            </div>
+            <div id="formStatus" role="alert" aria-live="polite"></div>
+        </form>
 
-        <main>
-            <form id="contact-form" aria-labelledby="form-heading">
-                <h2 id="form-heading" class="visually-hidden">Formularz kontaktowy</h2>
+    </main>
 
-                <div class="alert success" id="success-message" role="alert" aria-live="assertive" hidden>
-                    <i class="fas fa-check-circle" aria-hidden="true"></i>
-                    <p>Wiadomość została wysłana! Dziękujemy za kontakt.</p>
-                </div>
-
-                <div class="alert error" id="error-message" role="alert" aria-live="assertive" hidden>
-                    <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
-                    <p>Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="name">Imię i nazwisko <span aria-label="wymagane">*</span></label>
-                    <input type="text" id="name" name="name" required autocomplete="name" aria-required="true"
-                        aria-describedby="name-error">
-                    <div id="name-error" class="error-text" aria-live="polite"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">E-mail <span aria-label="wymagane">*</span></label>
-                    <input type="email" id="email" name="email" required autocomplete="email" aria-required="true"
-                        aria-describedby="email-error">
-                    <div id="email-error" class="error-text" aria-live="polite"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Telefon</label>
-                    <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9+\s-]+"
-                        aria-describedby="phone-error phone-hint">
-                    <div id="phone-hint" class="hint-text">Format: 123-456-789 lub +48 123 456 789</div>
-                    <div id="phone-error" class="error-text" aria-live="polite"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Temat <span aria-label="wymagane">*</span></label>
-                    <input type="text" id="subject" name="subject" required aria-required="true"
-                        aria-describedby="subject-error">
-                    <div id="subject-error" class="error-text" aria-live="polite"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Wiadomość <span aria-label="wymagane">*</span></label>
-                    <textarea id="message" name="message" rows="5" required aria-required="true"
-                        aria-describedby="message-error"></textarea>
-                    <div id="message-error" class="error-text" aria-live="polite"></div>
-                </div>
-
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="consent" name="consent" required aria-required="true"
-                        aria-describedby="consent-error">
-                    <label for="consent">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia
-                        odpowiedzi na pytanie <span aria-label="wymagane">*</span></label>
-                    <div id="consent-error" class="error-text" aria-live="polite"></div>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" id="submit-btn" class="btn">
-                        <span>Wyślij wiadomość</span>
-                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                    </button>
-                    <div class="spinner" id="spinner" hidden aria-hidden="true">
-                        <div class="bounce1"></div>
-                        <div class="bounce2"></div>
-                        <div class="bounce3"></div>
-                    </div>
-                </div>
-            </form>
-        </main>
-
-        <footer>
-            <p>&copy; 2025 Firma Usługowa. Wszelkie prawa zastrzeżone.</p>
-        </footer>
+    <footer>
+        <p>&copy; 2025 Firma Usługowa. Wszelkie prawa zastrzeżone.</p>
+    </footer>
     </div>
 
     <script src="js/script.js"></script>
