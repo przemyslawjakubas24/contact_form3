@@ -20,12 +20,20 @@ header('X-XSS-Protection: 1; mode=block');
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 require_once 'config.php';
 
-if (!in_array($origin, ALLOWED_ORIGINS)) {
+// Zezwalaj na lokalne testy (tryb debugowania)
+$isLocalTest = DEBUG_MODE && (empty($origin) || 
+                              strpos($origin, 'localhost') !== false || 
+                              strpos($origin, '127.0.0.1') !== false ||
+                              strpos($origin, 'file://') !== false);
+
+if (!$isLocalTest && !in_array($origin, ALLOWED_ORIGINS)) {
     http_response_code(403);
     die(json_encode(['success' => false, 'message' => 'Nieautoryzowane źródło żądania']));
 }
 
-header('Access-Control-Allow-Origin: ' . $origin);
+if (!empty($origin)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+}
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 

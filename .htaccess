@@ -4,6 +4,12 @@
     Deny from all
 </Files>
 
+# Ochrona pliku testowego (usuń po testach)
+<Files "test_smtp.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
 # Ochrona logów
 <Files "*.log">
     Order allow,deny
