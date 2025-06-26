@@ -1,22 +1,23 @@
 {
-    "name": "your-vendor/formularz-kontaktowy",
-    "description": "A contact form application using PHPMailer and modern web standards.",
-    "type": "project",
-    "require": {
-        "php": "^7.4 || ^8.0",
-        "phpmailer/phpmailer": "^6.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.5"
-    },
-    "scripts": {
-        "test": "phpunit"
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+	"name": "contact-form/phpmailer-integration",
+	"description": "Bezpieczny formularz kontaktowy z PHPMailer",
+	"type": "project",
+	"require": {
+		"php": ">=7.4",
+		"phpmailer/phpmailer": "^6.8"
+	},
+	"autoload": {
+		"psr-4": {
+			"ContactForm\\": "src/"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"echo 'Pamiętaj o skonfigurowaniu pliku config.php z właściwymi danymi SMTP!'"
+		]
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"classmap-authoritative": true
+	}
 }

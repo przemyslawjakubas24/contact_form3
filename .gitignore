@@ -1,0 +1,48 @@
+# Zależności Composer
+/vendor/
+composer.lock
+
+# Konfiguracja - NIGDY nie commituj tych plików!
+config.php
+.env
+
+# Logi
+/logs/
+*.log
+
+# Cache i pliki tymczasowe
+.cache/
+.tmp/
+*.tmp
+
+# Pliki systemowe Windows
+Thumbs.db
+Desktop.ini
+
+# Pliki systemowe macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Pliki IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Pliki backupu
+*.backup
+*.bak
+*.old
+
+# Pliki wrażliwe
+*.key
+*.pem
+*.crt
+*.p12
+
+# Pliki testowe
+test.php
+debug.php
+phpinfo.php

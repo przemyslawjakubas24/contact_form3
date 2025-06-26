@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Kontaktowy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Skontaktuj się z nami</h1>
+
+        <!-- Komunikaty dla użytkownika -->
+        <div id="message" class="message hidden"></div>
+
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label for="name">Imię i nazwisko *</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone">
+                <span class="error-message" id="phone-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Temat *</label>
+                <input type="text" id="subject" name="subject" required>
+                <span class="error-message" id="subject-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="message-text">Wiadomość *</label>
+                <textarea id="message-text" name="message" rows="5" required></textarea>
+                <span class="error-message" id="message-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <span class="checkmark"></span>
+                    Zgadzam się na przetwarzanie danych osobowych *
+                </label>
+                <span class="error-message" id="privacy-error"></span>
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-btn">
+                <span class="btn-text">Wyślij wiadomość</span>
+                <span class="spinner hidden"></span>
+            </button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
