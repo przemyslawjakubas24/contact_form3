@@ -3,6 +3,8 @@
 composer.lock
 
 # Konfiguracja - NIGDY nie commituj tych plików!
+.env.example
+config_env.php
 config.php
 .env
 
@@ -47,4 +49,3 @@ test.php
 debug.php
 phpinfo.php
 prompt.md
-DEPLOYMENT_NOTES.md
