@@ -4,7 +4,7 @@
  * WAŻNE: Usuń ten plik po testach!
  */
 
-require_once 'config.php';
+require_once '../config.php';
 require_once 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;

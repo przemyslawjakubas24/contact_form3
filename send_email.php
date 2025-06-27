@@ -18,7 +18,7 @@ header('X-XSS-Protection: 1; mode=block');
 
 // Sprawdzenie origin (CORS)
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-require_once 'config.php';
+require_once '../config.php';
 
 // Zezwalaj na lokalne testy (tryb debugowania)
 $isLocalTest = DEBUG_MODE && (empty($origin) || 
