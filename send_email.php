@@ -285,7 +285,17 @@ class ContactFormHandler {
                 .content { padding: 20px; background-color: #f9f9f9; }
                 .field { margin-bottom: 15px; }
                 .label { font-weight: bold; color: #4a5568; }
-                .value { margin-top: 5px; padding: 10px; background-color: white; border-left: 3px solid #667eea; }
+                .value { 
+                    margin-top: 5px; 
+                    padding: 10px; 
+                    background-color: white; 
+                    border-left: 3px solid #667eea;
+                    word-wrap: break-word;
+                    word-break: break-word;
+                    white-space: pre-wrap;
+                    overflow-wrap: break-word;
+                    max-width: 100%;
+                }
                 .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; }
             </style>
         </head>
