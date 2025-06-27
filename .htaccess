@@ -1,5 +1,8 @@
 # Bezpieczeństwo plików konfiguracyjnych
-# config.php został przeniesiony poza katalog publiczny - brak potrzeby ochrony
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
 
 # Ochrona pliku testowego (usuń po testach)
 <Files "test_smtp.php">
